@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WNotes.Models
 {
-	class Notebook : INotifyPropertyChanged
+	public class Notebook : INotifyPropertyChanged
 	{
 		private int id;
 		[PrimaryKey, AutoIncrement]
