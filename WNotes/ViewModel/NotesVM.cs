@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using WNotes.Models;
+using WNotes.ViewModel.Commands;
 
 namespace WNotes.ViewModel
 {
@@ -20,6 +21,15 @@ namespace WNotes.ViewModel
 			}
 		}
 		public ObservableCollection<Note> Notes { get; set; }
+
+		public NewNotebookCommand NewNotebookCommand { get; set; }
+		public NewNoteCommand NewNoteCommand { get; set; }
+
+		public NotesVM()
+		{
+			NewNotebookCommand = new NewNotebookCommand(this);
+			NewNoteCommand = new NewNoteCommand(this);
+		}
 
 	}
 }
