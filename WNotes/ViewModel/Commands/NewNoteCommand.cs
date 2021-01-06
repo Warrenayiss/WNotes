@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using WNotes.Models;
 
 namespace WNotes.ViewModel.Commands
 {
@@ -17,11 +18,19 @@ namespace WNotes.ViewModel.Commands
 
 		public bool CanExecute(object parameter)
 		{
-			return true;
+			Notebook selectedNotebook = parameter as Notebook;
+			if (selectedNotebook != null)
+			{
+				return true;
+			}
+			return false;
+
 		}
 
 		public void Execute(object parameter)
 		{
+			Notebook selectedNotebook = parameter as Notebook;
+			VM.CreateNote(selectedNotebook.Id);
 			//TODO: New note functionnality
 		}
 	}

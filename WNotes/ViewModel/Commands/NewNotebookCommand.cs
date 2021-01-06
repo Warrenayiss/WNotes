@@ -22,6 +22,7 @@ namespace WNotes.ViewModel.Commands
 
 		public void Execute(object parameter)
 		{
+			VM.CreateNotebook();
 			//TODO: New Notebook functionnality
 		}
 	}
